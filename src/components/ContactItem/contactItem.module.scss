@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  background-color: rgba(214, 212, 212, 0.8);
+  &:nth-child(2n + 1) {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.btn {
+  cursor: pointer;
+  height: 25px;
+  border-radius: 5px;
+  border: solid;
+  background-color: transparent;
+  border-style: none;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(128, 128, 128, 0.4);
+  }
+}
+.name {
+  width: 150px;
+}
+.number {
+  width: 150px;
+}

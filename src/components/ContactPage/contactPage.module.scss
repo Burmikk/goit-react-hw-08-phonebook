@@ -1,0 +1,32 @@
+.container {
+  width: 1200px;
+  // background-color: rgba(165, 171, 173, 0.854);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.wrapper {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+}
+.spiner_box {
+  position: relative;
+}
+
+.spiner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.error {
+  text-align: center;
+}
