@@ -23,7 +23,7 @@ const ContactPage = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.container}>
+    <div>
       {error ? (
         <p className={styles.error}>Something went wrong. Try again later. </p>
       ) : (
