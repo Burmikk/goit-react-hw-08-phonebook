@@ -36,10 +36,6 @@ const LogIn = () => {
 
   const onSubmit = state => {
     dispatch(login(state));
-
-    // if (error) {
-    //   notify();
-    // }
   };
 
   const { email, password } = state;
@@ -58,10 +54,8 @@ const LogIn = () => {
 
   useMemo(() => {
     if (error) {
-      console.log('yes');
       return notify();
     }
-    return console.log('no');
   }, [error]);
 
   return (
