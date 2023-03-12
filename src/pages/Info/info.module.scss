@@ -1,0 +1,57 @@
+.box {
+  width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  // background-color: #ece5daa3;
+}
+.title {
+  margin: 0;
+  text-align: center;
+  display: block;
+  // margin: 11px 0 17px 0;
+  font-size: 80px;
+  line-height: 80px;
+  color: #636262;
+  text-shadow: 0 13.36px 8.896px #8b8986, 0 -2px 1px #fff;
+  letter-spacing: -4px;
+
+  // font-weight: 800;
+  // color: transparent;
+  // font-size: 80px;
+  // background: url('https://phandroid.s3.amazonaws.com/wp-content/uploads/2014/05/rainbow-nebula.jpg')
+  //   repeat;
+  // background-position: 40% 50%;
+  // -webkit-background-clip: text;
+  // position: relative;
+  // text-align: center;
+  // line-height: 90px;
+  // letter-spacing: 2px;
+  // text-transform: uppercase;
+}
+.text {
+  margin: 15px;
+  text-indent: 30px;
+  text-align: justify;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+.lang_wrapper {
+  display: flex;
+  justify-content: right;
+  gap: 10px;
+}
+
+.lang {
+  background-color: transparent;
+  border-style: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.current {
+  composes: lang;
+  font-weight: bold;
+  border-bottom: 2px solid;
+}

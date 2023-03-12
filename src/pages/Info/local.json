@@ -1,0 +1,18 @@
+{
+  "title1": {
+    "en": "The phone book developed on React using Redux, private routes, and public routes. It's a web-based application that enables users to save their phone contacts information.",
+    "ua": "Телефонна книга, розроблена на React з використанням Redux, private routes та public routes. Це веб-додаток, який дозволяє користувачам зберігати свої телефонні контакти."
+  },
+  "title2": {
+    "en": "The application stores the contact information on the server, and the user must be authorized to add contacts to their repository, which adds an additional layer of security to the application.",
+    "ua": "Додаток зберігає контактну інформацію на сервері, і користувач повинен мати дозвіл на додавання контактів до свого сховища, що додає додатковий рівень безпеки додатку."
+  },
+  "title3": {
+    "en": "React allows you to use two types of routes: public and private. The public route allows users to view the About and Authorization pages. The private route requires users to be logged in to access all of the app's features, including the ability to add, delete, and filter contacts.",
+    "ua": "React дозволяє використовувати два типи маршрутів: публічні та приватні маршрути. Публічний маршрут дозволяє користувачам переглядати сторінки About та Sign Up / Log In. Приватний маршрут вимагає, щоб користувачі увійшли в систему, щоб отримати доступ до всіх функцій додатку, включаючи можливість додавати, видаляти і фільтрувати контакти."
+  },
+  "title4": {
+    "en": "The application's robust features and user-friendly interface that helps users manage their phone contacts effectively.",
+    "ua": "Надійні функції програми та зручний інтерфейс допомагають користувачам ефективно керувати своїми телефонними контактами."
+  }
+}

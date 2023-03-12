@@ -1,3 +1,30 @@
+.box {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
 .name {
+  box-sizing: content-box;
+  padding: 10px 20px;
+  text-decoration: none;
   color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.btn {
+  width: 90px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: white;
+    color: black;
+  }
 }

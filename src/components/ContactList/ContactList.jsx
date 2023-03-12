@@ -21,8 +21,8 @@ const ContactList = () => {
 
   const filteredContacts = filterSearch();
 
-  const list = filteredContacts.map(({ id, name, phone }) => (
-    <ContactItem key={id} id={id} name={name} number={phone} />
+  const list = filteredContacts.map(({ id, name, number }) => (
+    <ContactItem key={id} id={id} name={name} number={number} />
   ));
 
   return <ul className={styles.list}>{list}</ul>;

@@ -20,7 +20,7 @@ export const login = createAsyncThunk(
       const result = await api.login(value);
       return result;
     } catch ({ response }) {
-      return rejectWithValue(response.data);
+      return rejectWithValue(response.status);
     }
   }
 );
@@ -43,7 +43,6 @@ export const current = createAsyncThunk(
     try {
       const { auth } = getState();
       const result = await api.getCurrent(auth.token);
-      console.log(result);
 
       return result;
     } catch ({ response }) {

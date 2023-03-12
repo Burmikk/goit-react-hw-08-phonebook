@@ -11,6 +11,7 @@ import {
 } from 'redux/contacts/contacts-selectors';
 import { fetchContacts } from 'redux/contacts/contacts-operations';
 import { RotatingLines } from 'react-loader-spinner';
+import { selectorLoading } from 'redux/auth/auth-selectors';
 
 const ContactPage = () => {
   const contacts = useSelector(selectContacts);
@@ -18,37 +19,55 @@ const ContactPage = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
+  const loadingAuth = useSelector(selectorLoading);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
-    <div>
-      {error ? (
-        <p className={styles.error}>Something went wrong. Try again later. </p>
+    <>
+      {loadingAuth ? (
+        <div className={styles.spiner_auth}>
+          <RotatingLines
+            strokeColor="white"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          />
+        </div>
       ) : (
-        <div className={styles.wrapper}>
-          <h1 className={styles.title}>Phonebook</h1>
-          <ContactForm />
-          <div className={styles.spiner_box}>
-            <h2 className={styles.title}>Contacts</h2>
-            {isLoading && (
-              <div className={styles.spiner}>
-                <RotatingLines
-                  strokeColor="black"
-                  strokeWidth="5"
-                  animationDuration="0.75"
-                  width="96"
-                  visible={true}
-                />
+        <div>
+          {error ? (
+            <p className={styles.error}>
+              Something went wrong. Try again later.{' '}
+            </p>
+          ) : (
+            <div className={styles.wrapper}>
+              <h1 className={styles.title}>Phonebook</h1>
+              <ContactForm />
+              <div className={styles.spiner_box}>
+                <h2 className={styles.title}>Contacts</h2>
+                {isLoading && (
+                  <div className={styles.spiner}>
+                    <RotatingLines
+                      strokeColor="black"
+                      strokeWidth="5"
+                      animationDuration="0.75"
+                      width="96"
+                      visible={true}
+                    />
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-          <Filter />
-          {contacts.length !== 0 && <ContactList />}
+              <Filter />
+              {contacts.length !== 0 && <ContactList />}
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

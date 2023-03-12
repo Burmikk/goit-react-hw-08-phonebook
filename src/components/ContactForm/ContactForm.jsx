@@ -6,7 +6,7 @@ import styles from './contactForm.module.scss';
 
 const INITIAL_STATE = {
   name: '',
-  phone: '',
+  number: '',
 };
 
 const ContactForm = () => {
@@ -57,13 +57,13 @@ const ContactForm = () => {
       <label htmlFor="number">Number</label>
       <input
         className={styles.input}
-        id="phone"
+        id="number"
         type="tel"
-        name="phone"
+        name="number"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
-        value={state.phone}
+        value={state.number}
         onChange={inputChange}
       />
       <button className={styles.btn} type="submit">
