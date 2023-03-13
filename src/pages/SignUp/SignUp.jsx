@@ -41,7 +41,7 @@ const SignUp = () => {
   };
 
   const notify = () =>
-    toast.error('This email already exist', {
+    toast.error(error.message, {
       position: 'top-center',
       autoClose: 5000,
       hideProgressBar: false,
@@ -55,7 +55,7 @@ const SignUp = () => {
   useMemo(() => {
     if (error) {
       return notify();
-    }
+    } // eslint-disable-next-line
   }, [error]);
 
   const { name, email, password } = state;
@@ -81,6 +81,7 @@ const SignUp = () => {
             type="text"
             name="name"
             onChange={handleChange}
+            required
           />
           <label>Email</label>
           <input
@@ -89,6 +90,7 @@ const SignUp = () => {
             type="email"
             name="email"
             onChange={handleChange}
+            required
           />
           <label>Password</label>
           <input
@@ -97,6 +99,7 @@ const SignUp = () => {
             type="password"
             name="password"
             onChange={handleChange}
+            required
           />
           <button className={styles.btn}>Sign up</button>
         </form>

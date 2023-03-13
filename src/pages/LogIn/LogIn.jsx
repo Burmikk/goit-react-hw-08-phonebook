@@ -5,8 +5,8 @@ import { login } from 'redux/auth/auth-operations';
 import { RotatingLines } from 'react-loader-spinner';
 
 import { useSelector } from 'react-redux';
-import { selectorLoading } from 'redux/auth/auth-selectors';
-import { selectorError } from 'redux/auth/auth-selectors';
+import { selectorLoading, selectorError } from 'redux/auth/auth-selectors';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -18,8 +18,9 @@ const INITIAL_STATE = {
 const LogIn = () => {
   const [state, setState] = useState({ ...INITIAL_STATE });
   const dispatch = useDispatch();
-  const error = useSelector(selectorError);
+
   const loading = useSelector(selectorLoading);
+  const error = useSelector(selectorError);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -38,10 +39,8 @@ const LogIn = () => {
     dispatch(login(state));
   };
 
-  const { email, password } = state;
-
   const notify = () =>
-    toast.error('Login error.Check your email and password and try again', {
+    toast.error('Something went wrong, check your email and password', {
       position: 'top-center',
       autoClose: 5000,
       hideProgressBar: false,
@@ -58,8 +57,10 @@ const LogIn = () => {
     }
   }, [error]);
 
+  const { email, password } = state;
+
   return (
-    <>
+    <div>
       {loading ? (
         <div className={styles.spiner}>
           <RotatingLines
@@ -71,35 +72,30 @@ const LogIn = () => {
           />
         </div>
       ) : (
-        <div className={styles.box}>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <label>Email</label>
-            <input
-              className={styles.input}
-              value={email}
-              type="email"
-              name="email"
-              onChange={handleChange}
-              required
-            />
-            <label>Password</label>
-            <input
-              className={styles.input}
-              value={password}
-              type="password"
-              name="password"
-              onChange={handleChange}
-              required
-            />
-
-            <button type="submit" className={styles.btn}>
-              Log In
-            </button>
-          </form>
-          <ToastContainer />
-        </div>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label>Email</label>
+          <input
+            className={styles.input}
+            value={email}
+            type="email"
+            name="email"
+            onChange={handleChange}
+            required
+          />
+          <label>Password</label>
+          <input
+            className={styles.input}
+            value={password}
+            type="password"
+            name="password"
+            onChange={handleChange}
+            required
+          />
+          <button className={styles.btn}>Sign up</button>
+        </form>
       )}
-    </>
+      <ToastContainer />
+    </div>
   );
 };
 
